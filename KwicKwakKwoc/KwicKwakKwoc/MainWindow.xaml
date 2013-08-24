@@ -1,7 +1,7 @@
 ﻿<Window x:Class="KwicKwakKwoc.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="600">
     <Window.Resources>
         <Style TargetType="TextBlock" x:Key="ListTitleStyle">
             <Setter Property="FontFamily" Value="Segoe UI Light" />
@@ -10,8 +10,11 @@
             <Setter Property="HorizontalAlignment" Value="Center" />
             <Setter Property="VerticalAlignment" Value="Center" />
         </Style>
-        <Style TargetType="ListBox" x:Key="ListStyle">
+        <Style TargetType="Control" x:Key="StandardMarginStyle">
             <Setter Property="Margin" Value="6" />
+        </Style>
+        <Style TargetType="TextBox" x:Key="TextBoxStyle" BasedOn="{StaticResource StandardMarginStyle}">
+            <Setter Property="FontSize" Value="14" />
         </Style>
     </Window.Resources>
     <Grid>
@@ -23,23 +26,39 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="30px"/>
             <RowDefinition Height="*" />
-            <RowDefinition Height="30px"/>
+            <RowDefinition Height="35px"/>
         </Grid.RowDefinitions>
 
 
         <TextBlock Grid.Column="0" Grid.Row="0" 
                        Text="Titles" Style="{StaticResource ListTitleStyle}" />
-        <ListBox Grid.Column="0" Grid.Row="1" Style="{StaticResource ListStyle}">
+        <ListBox Grid.Column="0" Grid.Row="1" Style="{StaticResource StandardMarginStyle}">
 
         </ListBox>
+        <Grid Grid.Column="0" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="0" Style="{StaticResource TextBoxStyle}"></TextBox>
+            <Button Grid.Column="1" Content="Add" Style="{StaticResource StandardMarginStyle}" />
+        </Grid>
 
         <TextBlock Grid.Column="1" Grid.Row="0"  Text="Words to Ignore" Style="{StaticResource ListTitleStyle}" />
-        <ListBox Grid.Column="1" Grid.Row="1" Style="{StaticResource ListStyle}">
+        <ListBox Grid.Column="1" Grid.Row="1" Style="{StaticResource StandardMarginStyle}">
 
         </ListBox>
+        <Grid Grid.Column="1" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="0" Style="{StaticResource TextBoxStyle}"></TextBox>
+            <Button Grid.Column="1" Content="Add" Style="{StaticResource StandardMarginStyle}" />
+        </Grid>
 
         <TextBlock Grid.Column="2" Grid.Row="0"  Text="KWIC Index" Style="{StaticResource ListTitleStyle}" />
-        <ListBox Grid.Column="2" Grid.Row="1" Style="{StaticResource ListStyle}">
+        <ListBox Grid.Column="2" Grid.Row="1" Style="{StaticResource StandardMarginStyle}">
 
         </ListBox>
 
