@@ -10,6 +10,6 @@ namespace KwicKwakKwoc
     {
         private List<string> ignoredWords;
 
-        public static List<string> filterList(List<string> list);
+        public static List<string> filterList(List<string> list, List<string> ignoredWords);
     }
 }

@@ -8,12 +8,26 @@ namespace KwicKwakKwoc
 {
     static class StringRotator
     {
-        static List<string> PermuteWords(string line)
+        public static List<string> PermuteWords(string line)
         {
             List<string> lines = new List<String>();
-            string[] words = line.Split(' ');
+            lines.Add(line);
 
-            return null;
+            string partLeft = line;
+            string partRight = String.Empty;
+
+            string[] words = line.Trim().Split(' ');
+            foreach (string word in words)
+            {
+                partRight = " " + word;
+                partLeft = partLeft.Substring(word.Length - 1);
+                string newLine = partLeft + partRight;
+                lines.Add(newLine);
+            }
+
+
+
+            return lines;
         }
     }
 }
