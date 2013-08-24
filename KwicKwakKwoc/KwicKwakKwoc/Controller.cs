@@ -19,7 +19,7 @@ namespace KwicKwakKwoc
 
         private static List<String> RemoveIgnoredWords(List<String> permutations, List<String> ignore)
         {
-            return IgnoreRemover.filterList(permutations, ignore);
+            return IgnoreRemover.FilterList(permutations, ignore);
         }
 
         private static List<String> GeneratePermutations(List<String> titles)

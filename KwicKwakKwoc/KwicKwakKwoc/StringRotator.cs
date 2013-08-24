@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace KwicKwakKwoc
 {
+    /// <summary>
+    /// Generate all the different permutations of the sentece achieved by circular shifting
+    /// </summary>
     static class StringRotator
     {
         public static List<string> PermuteWords(string sentence)
