@@ -1,20 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KwicKwakKwoc
 {
     /// <summary>
-    /// Generate all the different permutations of the sentece achieved by circular shifting
+    /// A class to generate all the different permutations of the words in the line achieved by circular shifting
     /// </summary>
     static class StringRotator
     {
-        public static List<string> PermuteWords(string sentence)
+        public static List<string> PermuteWords(string line)
         {
             List<string> result = new List<string>();
-            string leftPart = sentence.Trim();
+            string leftPart = line.Trim();
             string rightPart = String.Empty;
 
             result.Add(leftPart);
