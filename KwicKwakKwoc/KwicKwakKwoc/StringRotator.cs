@@ -13,8 +13,6 @@ namespace KwicKwakKwoc
             List<string> lines = new List<String>();
             string[] words = line.Split(' ');
 
-
-
             return null;
         }
     }
