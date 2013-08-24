@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace KwicKwakKwoc
 {
@@ -15,7 +17,7 @@ namespace KwicKwakKwoc
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BtnGenerate_Click(object sender, RoutedEventArgs e)
         {
             String titleContents = TitleBox.Text;
             String ignoreContents = IgnoreBox.Text;
@@ -33,9 +35,40 @@ namespace KwicKwakKwoc
             KwicBox.Text = kwicBuilder.ToString();
         }
 
+        private void BtnOpenFile_Click(object sender, RoutedEventArgs e)
+        {
+            // Create OpenFileDialog 
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+
+            // Set filter for file extension and default file extension 
+            dlg.DefaultExt = ".txt";
+            dlg.Filter = "Text Files (*.txt)|*.txt";
+
+            // Display OpenFileDialog by calling ShowDialog method 
+            Nullable<bool> result = dlg.ShowDialog();
+
+            // Get the selected file name and display in a TextBox 
+            if (result == true)
+            {
+                // Open document 
+                string filename = dlg.FileName;
+
+                // Check which button is selected
+                switch ( ((Button)sender).Tag.ToString() )
+                {
+                    case "title":
+                        TitleBox.Text = File.ReadAllText(filename);
+                        break;
+                    case "ignored":
+                        IgnoreBox.Text = File.ReadAllText(filename);
+                        break;
+                }
+            }
+        }
+
         private static List<String> SplitStringIntoLines(string titleContents)
         {
-            string[] lines = titleContents.Split(new[] {Environment.NewLine}, StringSplitOptions.RemoveEmptyEntries);
+            string[] lines = titleContents.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
             return new List<string>(lines);
         }
     }
