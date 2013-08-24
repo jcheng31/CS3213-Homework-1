@@ -53,6 +53,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controller.cs" />
     <Compile Include="IgnoreRemover.cs" />
     <Compile Include="StringRotator.cs" />
     <Page Include="MainWindow.xaml">
