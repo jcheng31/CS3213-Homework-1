@@ -26,14 +26,13 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="30px"/>
             <RowDefinition Height="*" />
+            <RowDefinition Height="40px" />
         </Grid.RowDefinitions>
 
 
         <TextBlock Grid.Column="0" Grid.Row="0" 
                        Text="Titles" Style="{StaticResource ListTitleStyle}" />
-        <TextBox Grid.Column="0" Grid.Row="1" Style="{StaticResource StandardMarginStyle}">
-
-        </TextBox>
+        <TextBox Name="TitleBox" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Style="{StaticResource StandardMarginStyle}" AcceptsReturn="True"/>
         <Grid Grid.Column="0" Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="4*" />
@@ -42,9 +41,7 @@
         </Grid>
 
         <TextBlock Grid.Column="1" Grid.Row="0"  Text="Words to Ignore" Style="{StaticResource ListTitleStyle}" />
-        <TextBox Grid.Column="1" Grid.Row="1" Style="{StaticResource StandardMarginStyle}">
-
-        </TextBox>
+        <TextBox Name="IgnoreBox" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Style="{StaticResource StandardMarginStyle}" AcceptsReturn="True"/>
         <Grid Grid.Column="1" Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="4*" />
@@ -53,9 +50,10 @@
         </Grid>
 
         <TextBlock Grid.Column="2" Grid.Row="0"  Text="KWIC Index" Style="{StaticResource ListTitleStyle}" />
-        <TextBox Grid.Column="2" Grid.Row="1" Style="{StaticResource StandardMarginStyle}" IsReadOnly="True">
+        <TextBox Name="KwicBox" Grid.Column="2" Grid.Row="1" Style="{StaticResource StandardMarginStyle}" IsReadOnly="True">
 
         </TextBox>
+        <Button Grid.Column="2" Grid.Row="2" Content="Generate!" Style="{StaticResource StandardMarginStyle}" Click="Button_Click" />
 
     </Grid>
 </Window>
