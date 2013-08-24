@@ -41,7 +41,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <TextBox Grid.Column="0" Style="{StaticResource TextBoxStyle}"></TextBox>
-            <Button Grid.Column="1" Content="Add" Style="{StaticResource StandardMarginStyle}" />
+            <Button Grid.Column="1" Content="Add" Style="{StaticResource StandardMarginStyle}" Click="Button_Click" />
         </Grid>
 
         <TextBlock Grid.Column="1" Grid.Row="0"  Text="Words to Ignore" Style="{StaticResource ListTitleStyle}" />
