@@ -1,7 +1,7 @@
 ﻿<Window x:Class="KwicKwakKwoc.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="328" Width="600" MinHeight="350" MinWidth="500">
+        Title="Kwic-Kwak-Kwoc" Height="328" Width="600" MinHeight="350" MinWidth="500">
     <Window.Resources>
         <Style TargetType="TextBlock" x:Key="ListTitleStyle">
             <Setter Property="FontFamily" Value="Segoe UI Light" />
@@ -53,7 +53,7 @@
         <TextBox Name="KwicBox" Grid.Column="2" Grid.Row="1" Style="{StaticResource StandardMarginStyle}" IsReadOnly="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"  Margin="6,6,6,5">
 
         </TextBox>
-        <Button Tag="title" Grid.Column="0" Grid.Row="2" Content="Select Title" Style="{StaticResource StandardMarginStyle}" Click="BtnOpenFile_Click" Margin="6,4,6,8" />
+        <Button Tag="title" Grid.Column="0" Grid.Row="2" Content="Select Titles" Style="{StaticResource StandardMarginStyle}" Click="BtnOpenFile_Click" Margin="6,4,6,8" />
         <Button Tag="ignored" Grid.Column="1" Grid.Row="2" Content="Select Ignored Words" Style="{StaticResource StandardMarginStyle}" Click="BtnOpenFile_Click" Margin="6,4,6,8" />
         <Button Grid.Column="2" Grid.Row="2" Content="Generate!" Style="{StaticResource StandardMarginStyle}" Click="BtnGenerate_Click" Margin="6,4,6,8" />
     </Grid>
