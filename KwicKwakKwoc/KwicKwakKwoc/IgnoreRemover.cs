@@ -8,8 +8,6 @@ namespace KwicKwakKwoc
     /// </summary>
     class IgnoreRemover
     {
-        private List<string> ignoredWords;
-
         public static List<string> FilterList(List<string> lines, List<string> ignoredWords)
         {
             List<string> result = new List<string>();
