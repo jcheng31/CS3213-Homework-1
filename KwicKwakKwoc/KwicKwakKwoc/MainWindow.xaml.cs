@@ -40,7 +40,7 @@ namespace KwicKwakKwoc
             // Create OpenFileDialog 
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
 
-            // Set filter for file extension and default file extension 
+            // Set filter for file extension and default file extension to .txt
             dlg.DefaultExt = ".txt";
             dlg.Filter = "Text Files (*.txt)|*.txt";
 
@@ -61,6 +61,8 @@ namespace KwicKwakKwoc
                         break;
                     case "ignored":
                         IgnoreBox.Text = File.ReadAllText(filename);
+                        break;
+                    default:
                         break;
                 }
             }
