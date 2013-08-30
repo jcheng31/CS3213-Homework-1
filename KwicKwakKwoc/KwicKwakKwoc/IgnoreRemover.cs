@@ -16,7 +16,11 @@ namespace KwicKwakKwoc
                 string line = lines[i];
                 int index = line.IndexOf(" ");
                 string firstWord = index > 0 ? line.Substring(0, index) : line;
-                if (ignoredWords.FindIndex(x => x.Equals(firstWord, StringComparison.OrdinalIgnoreCase)) < 0) result.Add(line);
+                // we add line only if the first word is not in the list of ignored words
+                if (ignoredWords.FindIndex(x => x.Equals(firstWord, StringComparison.OrdinalIgnoreCase)) < 0)
+                {
+                    result.Add(line);
+                }
             }
             return result;
         }
