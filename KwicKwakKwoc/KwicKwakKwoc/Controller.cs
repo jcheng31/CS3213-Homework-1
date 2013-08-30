@@ -12,9 +12,14 @@ namespace KwicKwakKwoc
         {
             List<String> permutations = GeneratePermutations(titles);
             List<String> filtered = RemoveIgnoredWords(permutations, ignore);
-            filtered.Sort((s1, s2) => String.Compare(s1, s2, StringComparison.Ordinal));
+            List<String> sorted = SortFilteredWords(filtered);
 
-            return filtered;
+            return sorted;
+        }
+
+        private static List<string> SortFilteredWords(List<string> filtered)
+        {
+            return Sorter.SortList(filtered);
         }
 
         private static List<String> RemoveIgnoredWords(List<String> permutations, List<String> ignore)
